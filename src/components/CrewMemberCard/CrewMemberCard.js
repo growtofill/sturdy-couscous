@@ -5,8 +5,8 @@ const CrewMemberCard = (props) => (
     <Card interactive={true} elevation={Elevation.TWO}>
         <h5>{props.name.title} {props.name.first} {props.name.last}</h5>
         <p>{props.location.city}</p>
-        <Button>Left</Button>
-        <Button>Right</Button>
+        <Button>Prev</Button>
+        <Button>Next</Button>
     </Card>
 );
 

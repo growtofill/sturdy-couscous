@@ -15,7 +15,11 @@ class App extends Component {
     return (
       <StateProvider>
         <Filters />
-        <CrewMemberList />
+        <div className="Row">
+          <div className="Col"><CrewMemberList stage="applied" /></div>
+          <div className="Col"><CrewMemberList stage="interviewing" /></div>
+          <div className="Col"><CrewMemberList stage="hired" /></div>
+        </div>
       </StateProvider>
     )
   }
