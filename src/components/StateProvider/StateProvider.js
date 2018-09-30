@@ -20,8 +20,17 @@ class StateProvider extends React.Component {
     constructor(props) {
         super(props);
 
+        let initialState = defaultState;
+
+        try {
+            const storedStateJson = sessionStorage.getItem('CREW_APP');
+            if (storedStateJson) {
+                initialState = JSON.parse(storedStateJson);
+            }
+        } catch (_) {}
+
         this.state = {
-            ...defaultState,
+            ...initialState,
             updateFilter: (key, value) => {
                 this.setState(prevState => ({
                     ...prevState,
@@ -29,7 +38,12 @@ class StateProvider extends React.Component {
                         ...prevState.filters,
                         [key]: value
                     }
-                }), () => console.debug(this.state));
+                }), () => {
+                    sessionStorage.setItem('CREW_APP', JSON.stringify({
+                        filters: this.state.filters,
+                        stages: this.state.stages
+                    }));
+                });
             },
             updateStage: (uuid, dir) => {
                 this.setState(prevState => ({
@@ -38,7 +52,12 @@ class StateProvider extends React.Component {
                         ...prevState.stages,
                         [uuid]: nextStage(prevState.stages[uuid], dir)
                     }
-                }), () => console.debug(this.state));
+                }), () => {
+                    sessionStorage.setItem('CREW_APP', JSON.stringify({
+                        filters: this.state.filters,
+                        stages: this.state.stages
+                    }));
+                });
             } 
         }
     }
