@@ -21,21 +21,23 @@ class App extends Component {
 
   render() {
     return (
-      <StateProvider>
-        <Filters />
-          {this.state.crewMembers
-            ? (
-              <div className="Row">
-                <div className="Col">
-                  <CrewMemberList stage="applied" crewMembers={this.state.crewMembers} /></div>
-                <div className="Col">
-                  <CrewMemberList stage="interviewing" crewMembers={this.state.crewMembers} /></div>
-                <div className="Col">
-                  <CrewMemberList stage="hired" crewMembers={this.state.crewMembers} />
+      <div className="App">
+        <StateProvider>
+          <Filters />
+            {this.state.crewMembers
+              ? (
+                <div className="Row">
+                  <div className="Col">
+                    <CrewMemberList stage="applied" crewMembers={this.state.crewMembers} /></div>
+                  <div className="Col">
+                    <CrewMemberList stage="interviewing" crewMembers={this.state.crewMembers} /></div>
+                  <div className="Col">
+                    <CrewMemberList stage="hired" crewMembers={this.state.crewMembers} />
+                  </div>
                 </div>
-              </div>
-            ) : "..."}
-      </StateProvider>
+              ) : "..."}
+        </StateProvider>
+      </div>
     )
   }
 }
