@@ -2,18 +2,16 @@ import React, { Component } from 'react';
 import logo from './assets/images/logo.png';
 import './App.css';
 
+import 'normalize.css/normalize.css';
+import '@blueprintjs/icons/lib/css/blueprint-icons.css';
+import '@blueprintjs/core/lib/css/blueprint.css';
+
+import CrewMemberList from "./components/CrewMemberList/CrewMemberList";
+
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">OpenOceanStudio: Crew Applications</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <CrewMemberList />
     );
   }
 }
