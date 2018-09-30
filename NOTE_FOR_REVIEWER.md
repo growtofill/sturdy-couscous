@@ -5,7 +5,7 @@
 - the data is displayed fom the url
 - filtering by name and city works
 - moving applicants between the stages works
-- global state is kept in the context and save to session storage
+- global state is kept in the context and saved to session storage
 
 ## Additional Notes
 
