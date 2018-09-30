@@ -9,4 +9,4 @@
 
 ## Additional Notes
 
-I found the timeframe for this task pretty tight, so I prefered working functionality over everything else. The only test I feel I coudn't skip is for lig to move between the stages.
+I found the timeframe for this task pretty tight, so I prefered working functionality over everything else. The only test I feel I coudn't skip is for logic to move between the stages.
